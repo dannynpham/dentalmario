@@ -1,42 +1,39 @@
 {
-    "imageURL": "/img/characters.gif",
+    "imageURL": "/img/characters.png",
 
-    "frames": [
-        {
+    "frames": [{
             "name": "idle",
-            "rect": [276, 44, 16, 16]
+            "rect": [273, 234, 14, 24]
         },
         {
             "name": "run-1",
-            "rect": [290, 44, 16, 16]
+            "rect": [298, 234, 14, 24]
         },
         {
             "name": "run-2",
-            "rect": [304, 43, 16, 16]
+            "rect": [324, 234, 14, 24]
         },
         {
             "name": "run-3",
-            "rect": [321, 44, 16, 16]
+            "rect": [376, 233, 14, 24]
         },
         {
             "name": "break",
-            "rect": [337, 44, 16, 16]
+            "rect": [402, 234, 14, 24]
         },
         {
             "name": "jump",
-            "rect": [355, 44, 16, 16]
+            "rect": [350, 234, 14, 24]
         }
     ],
 
-    "animations": [
-        {
-            "name": "run",
-            "frameLen": 6,
-            "frames": [
-                "run-1",
-                "run-2",
-                "run-3"
-            ]
-        }
-    ]
+    "animations": [{
+        "name": "run",
+        "frameLen": 10,
+        "frames": [
+            "run-1",
+            "run-2",
+            "run-3"
+        ]
+    }]
 }

@@ -1,0 +1,17 @@
+{
+  "imageURL": "/img/characters.png",
+
+  "frames": [{
+      "name": "walk-1",
+      "rect": [182, 187, 16, 16]
+    }
+  ],
+
+  "animations": [{
+    "name": "walk",
+    "frameLen": 0.15,
+    "frames": [
+      "walk-1"
+    ]
+  }]
+}

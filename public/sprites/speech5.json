@@ -1,0 +1,12 @@
+{
+  "imageURL": "/img/characters.png",
+  "frames": [{
+    "name": "bubble",
+    "rect": [0, 507, 212, 102]
+  }],
+  "animations": [{
+    "name": "walk",
+    "frameLen": 100,
+    "frames": ["bubble"]
+  }]
+}

@@ -51,6 +51,7 @@ function createGoombaFactory(sprite) {
     return function createGoomba() {
         const goomba = new Entity();
         goomba.size.set(16, 16);
+        goomba.type = 'goomba';
 
         goomba.addTrait(new Physics());
         goomba.addTrait(new Solid());

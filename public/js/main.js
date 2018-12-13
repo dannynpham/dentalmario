@@ -28,6 +28,7 @@ async function main(canvas) {
 
     const loadLevel = await createLevelLoader(entityFactory);
 
+
     const level = await loadLevel('1-1');
 
     const camera = new Camera();
@@ -37,6 +38,8 @@ async function main(canvas) {
     const playerEnv = createPlayerEnv(mario);
     level.entities.add(playerEnv);
 
+    window.entityFactory = entityFactory;
+    window.level = level;
 
     level.comp.layers.push(createCollisionLayer(level));
     level.comp.layers.push(createDashboardLayer(font, playerEnv));
@@ -57,4 +60,16 @@ async function main(canvas) {
 }
 
 const canvas = document.getElementById('screen');
-main(canvas);
+const myAudio = new Audio('../img/cavity.mp3');
+myAudio.loop = true;
+
+function enter(event) {
+    if (event.keyCode === 13) {
+        myAudio.play();
+        document.querySelector('.start-screen').style.display = 'none';
+        main(canvas);
+        document.querySelector('#screen').style.display = 'block';
+        document.removeEventListener('keydown', enter);
+    }
+}
+document.addEventListener('keydown', enter, false);

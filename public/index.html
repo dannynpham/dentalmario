@@ -9,15 +9,97 @@
         }
 
         #screen {
-            display: block;
+            display: none;
             image-rendering: pixelated;
             height: 100vh;
             margin: auto;
+        }
+        .final-screen {
+            display: none;
+            position: relative;
+        }
+        h1 {
+            position: absolute;
+            bottom: 0;
+            text-align: center;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            width: 75%;
+            color: white;
+        }
+        .final {
+            display: block;
+            image-rendering: pixelated;
+            height: 100vh;
+            width: 70vw;
+            margin: auto;
+        }
+        .start-screen {
+            height: 100vh;
+            width: 75vw;
+            position: relative;
+            background: white;
+            margin: 0 auto;
+        }
+        .title {
+            top: -50px;
+            font-size: 13vh;
+            background: rgba(0, 0, 0, 0);
+            color: black;
+        }
+        .mario {
+            transform: translate(-50%, -55%);
+            height: 48vh;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+        }
+        .enter {
+            font-size: 4vh;
+            width: 100%;
+            margin: 0;
+            background: rgba(0, 0, 0, 0);
+            color: black;
+        }
+        p {
+            margin: 15px;
+        }
+        .instruction {
+            font-size: 3vh;
         }
     </style>
     <script type="module" src="/js/main.js"></script>
 </head>
 <body>
+    <div class="start-screen">
+        <h1 class="title">Dental Mario</h1>
+        <img class="mario" src="./img/dr-mario.png">
+        <h1 class="enter">
+            Help Dental Mario clean your mouth by killing all the sugar bugs and bacteria!
+            <p class="instruction">'A' for LEFT, 'D' for RIGHT, 'P' to JUMP, HOLD 'O' to  RUN!</p>
+            <p>Press Enter to start!</p>
+        </h1>
+    </div>
     <canvas id="screen" width="256" height="240"></canvas>
+    <div class="final-screen">
+        <h1>YOUR TRIAL GAME HAS ENDED. SCHEDULE AN APPOINTMENT WITH YOUR DENTIST FOR MORE INFORMATION!</h1>
+        <img class="final" src="./img/final-screen.jpg">
+    </div>
+    <!-- <script>
+        const myAudio = new Audio('./img/cavity.mp3');
+        myAudio.loop = true;
+        function enter(event) {
+            if (event.keyCode === 13) {
+                myAudio.play();
+                document.querySelector('.start-screen').style.display = 'none';
+                const canvas = document.getElementById('screen');
+                window.main(canvas);
+                document.querySelector('#screen').style.display = 'block';
+                document.removeEventListener('keydown', enter);
+            }
+        }
+        document.addEventListener('keydown', enter, false);
+    </script> -->
 </body>
 </html>
